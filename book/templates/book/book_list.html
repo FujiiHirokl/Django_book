@@ -1,7 +1,18 @@
+{% extends "base.html" %}
+{%block title%}書籍一覧{%endblock%}
+{%block content%}
+
 {% for item in object_list %}
-<ul>
-    <li>{{ item.title }}</li>
-    <li>{{ item.text }}</li>
-    <li>{{ item.category }}</li>
-</ul>
-{% endfor %}
+    <div class="card">
+        <div class="card-header">
+            {{ item.title }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.text }}</h5>
+          <p class="card-text">{{ item.category }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    {% endfor %}
+
+{%endblock content%}
